@@ -9,7 +9,7 @@ interface HookProps {
 }
 
 export const useProduct = ({product, onChange, value = 0, initialValues}: HookProps) => {
-	const [counter, setCounter] = useState<number>(initialValues&&initialValues.count || value);
+	const [counter, setCounter] = useState<number>(initialValues?.count || value);
 	const isMounted = useRef(false);
 	
 	// const isControlled = useRef(!!onChange);
@@ -17,7 +17,7 @@ export const useProduct = ({product, onChange, value = 0, initialValues}: HookPr
 	const increaseBy = (value: number): void=> {
 		
 		let newValue = Math.max(counter + value, 0);
-		if(initialValues&&initialValues.maxCount){
+		if(initialValues?.maxCount){
 			newValue = Math.min(newValue, initialValues.maxCount);
 		}
 		
@@ -28,7 +28,7 @@ export const useProduct = ({product, onChange, value = 0, initialValues}: HookPr
 
 
 	const reset = ()=>{
-		setCounter(initialValues&&initialValues.count || 0);
+		setCounter(initialValues?.count || 0);
 	};
 
 	useEffect(() => {
@@ -52,8 +52,8 @@ export const useProduct = ({product, onChange, value = 0, initialValues}: HookPr
 	return { 
 		counter, 
 		increaseBy,
-		isMaxCountReached: !! initialValues!.count && initialValues!.maxCount === counter,
-		maxCount: initialValues!.maxCount || 0,
+		isMaxCountReached: !! initialValues?.count && initialValues?.maxCount === counter,
+		maxCount: initialValues?.maxCount || 0,
 		reset 
 	};
 };

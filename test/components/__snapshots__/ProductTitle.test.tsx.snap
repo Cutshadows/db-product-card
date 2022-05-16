@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductTitle should view the component with custom title 1`] = `
+<span
+  className="productDescription custom-class"
+>
+  Custom Props
+</span>
+`;
+
+exports[`ProductTitle should view the components with the name of product 1`] = `
+<div
+  className="productCard undefined"
+>
+  <span
+    className="productDescription undefined"
+  >
+    Producto test 2 undefined image
+  </span>
+</div>
+`;

@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.0.1",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -17,6 +17,7 @@
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
+    "test:watch": "tsdx test --watch",
     "analyze": "size-limit --why"
   },
   "peerDependencies": {
@@ -47,18 +48,43 @@
     }
   ],
   "devDependencies": {
+    "@types/react-test-renderer": "17.0.2",
+    "@babel/preset-env": "^7.17.10",
+    "@babel/preset-react": "^7.16.7",
     "@rollup/plugin-image": "2.1.1",
     "@size-limit/preset-small-lib": "^7.0.8",
-    "@types/react": "^18.0.8",
-    "@types/react-dom": "^18.0.0",
+    "@types/react": "17.0.2",
+    "@types/react-dom": "17.0.2",
+    "babel-jest": "^28.1.0",
     "husky": "^7.0.4",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.6.3",
+    "jest-transform-stub": "^2.0.0",
     "postcss": "^8.4.13",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-test-renderer": "17.0.2",
     "rollup-plugin-postcss": "4.0.1",
     "size-limit": "^7.0.8",
     "tsdx": "^0.14.1",
     "tslib": "^2.4.0",
     "typescript": "^4.6.3"
+  },
+  "repository": {
+    "url": "https://github.com/Cutshadows/db-product-card",
+    "type": "git"
+  },
+  "keywords": [
+    "product",
+    "card",
+    "library"
+  ],
+  "dependencies": {
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    }
   }
 }
